@@ -1,136 +1,201 @@
+``html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة المواد العربية</title>
+
+    <title>مشاريعنا المدرسية</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background: #071426;
+            background: #030712;
             color: white;
-            min-height: 100vh;
         }
 
-        header {
-            padding: 25px 8%;
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            padding: 22px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #030d1c;
-            border-bottom: 1px solid #263a52;
+            background: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            z-index: 1000;
         }
 
-        header h2 {
-            color: #f5c451;
-            font-size: 26px;
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
-        nav a {
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
-            margin-right: 20px;
+            font-size: 16px;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #f5c451;
+        .nav-links a:hover {
+            opacity: 0.6;
         }
 
+        /* HERO */
         .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 75px 20px 40px;
+            padding: 120px 20px 50px;
+        }
+
+        .hero-content {
+            max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 65px;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #9ca3af;
         }
 
         .hero p {
-            color: #b7c7dc;
-            font-size: 19px;
+            color: #9ca3af;
+            font-size: 20px;
+            line-height: 2;
         }
 
+        .hero-button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 35px;
+            border: 1px solid #374151;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: white;
+            color: #030712;
+        }
+
+        /* SUBJECTS */
         .subjects {
+            padding: 100px 8%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .title h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .title p {
+            color: #9ca3af;
+        }
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
-            padding: 40px 8%;
         }
 
         .card {
-            padding: 35px 25px;
-            text-align: center;
+            background: #0b1120;
+            border: 1px solid #1f2937;
             border-radius: 20px;
-            background: #10243e;
-            border: 1px solid #294362;
-            transition: 0.3s;
+            padding: 45px 30px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: 0.35s ease;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            border-color: #f5c451;
-            box-shadow: 0 10px 30px #0005;
+            border-color: #6b7280;
+            background: #111827;
         }
 
-        .icon {
-            font-size: 55px;
-            margin-bottom: 20px;
+        .card-icon {
+            font-size: 45px;
+            margin-bottom: 25px;
         }
 
-        .card h2 {
-            margin-bottom: 15px;
+        .card h3 {
             font-size: 25px;
+            margin-bottom: 15px;
         }
 
         .card p {
-            color: #b7c7dc;
-            margin-bottom: 25px;
+            color: #9ca3af;
             line-height: 1.8;
         }
 
-        .card a {
-            display: block;
-            background: #f5c451;
-            color: #071426;
-            padding: 14px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .card a:hover {
-            background: white;
-        }
-
+        /* FOOTER */
         footer {
             text-align: center;
-            padding: 30px;
-            color: #9aadc4;
-            margin-top: 30px;
+            padding: 50px 20px;
+            border-top: 1px solid #1f2937;
+            color: #6b7280;
         }
 
-        @media (max-width: 800px) {
-            .subjects {
-                grid-template-columns: 1fr;
-                padding: 30px 7%;
+        /* MOBILE */
+        @media (max-width: 850px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
             }
 
             .hero h1 {
-                font-size: 30px;
+                font-size: 45px;
             }
 
-            header {
-                flex-direction: column;
-                gap: 20px;
+            .cards {
+                grid-template-columns: 1fr;
+                max-width: 500px;
             }
         }
     </style>
@@ -138,64 +203,157 @@
 
 <body>
 
-    <header>
-        <h2>📚 منصة المواد العربية</h2>
+    <!-- NAVBAR -->
+    <nav>
 
-        <nav>
-            <a href="#home">الرئيسية</a>
-            <a href="#subjects">المواد الدراسية</a>
-        </nav>
-    </header>
+        <div class="logo">
+            مشاريعنا
+        </div>
 
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">الرئيسية</a>
+            </li>
+
+            <li>
+                <a href="#subjects">المواد</a>
+            </li>
+
+            <!-- ISLAMIC -->
+            <li>
+                <a href="https://llmory3mk66-dot.github.io/islamic-pbl/"
+                   target="_blank">
+                    التربية الإسلامية
+                </a>
+            </li>
+
+            <!-- SSM -->
+            <li>
+                <a href="https://llmory3mk66-dot.github.io/ssm-pbl/"
+                   target="_blank">
+                    الدراسات الاجتماعية
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
     <section class="hero" id="home">
-        <h1>مرحباً بك في منصة التعلم</h1>
-        <p>اختر المادة الدراسية التي تريد تعلمها</p>
+
+        <div class="hero-content">
+
+            <h1>
+                مرحباً بكم في
+                <span>مشاريعنا المدرسية</span>
+            </h1>
+
+            <p>
+                موقع يجمع مشاريعنا المدرسية في مكان واحد.
+                اختر المادة التي تريد استكشافها.
+            </p>
+
+            <a href="#subjects" class="hero-button">
+                استكشف المشاريع
+            </a>
+
+        </div>
+
     </section>
 
+
+    <!-- SUBJECTS -->
     <section class="subjects" id="subjects">
 
-        <!-- Arabic -->
-        <div class="card">
-            <div class="icon">📖</div>
-            <h2>اللغة العربية</h2>
-            <p>تعلم القراءة والكتابة والقواعد
-                والنحو بطريقة سهلة وممتعة.</p>
+        <div class="title">
 
-            <a href="arabic.html">
-                ادخل إلى الموقع ←
-            </a>
+            <h2>المواد الدراسية</h2>
+
+            <p>
+                اختر أحد المشاريع للانتقال إلى موقعه
+            </p>
+
         </div>
 
-        <!-- Social Studies -->
-        <div class="card">
-            <div class="icon">🌍</div>
-            <h2>الدراسات الاجتماعية</h2>
-            <p>اكتشف تاريخ الإمارات وجغرافيتها
-                وتراثها الوطني.</p>
 
-         
-                ادخل إلى الموقع ←
+        <div class="cards">
+
+            <!-- ISLAMIC -->
+            <a
+                href="https://llmory3mk66-dot.github.io/islamic-pbl/"
+                target="_blank"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    🕌
+                </div>
+
+                <h3>التربية الإسلامية</h3>
+
+                <p>
+                    اضغط هنا لزيارة مشروع التربية الإسلامية
+                </p>
+
             </a>
-        </div>
 
-        <!-- Islamic Studies -->
-        <div class="card">
-            <div class="icon">🕌</div>
-            <h2>التربية الإسلامية</h2>
-            <p>تعلم القرآن الكريم والحديث الشريف
-                والقيم الإسلامية.</p>
 
-           
-                ادخل إلى الموقع ←
+            <!-- ARABIC -->
+            <a
+                href="#"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    📚
+                </div>
+
+                <h3>اللغة العربية</h3>
+
+                <p>
+                    اضغط هنا لزيارة مشروع اللغة العربية
+                </p>
+
             </a>
+
+
+            <!-- SSM -->
+            <a
+                href="https://llmory3mk66-dot.github.io/ssm-pbl/"
+                target="_blank"
+                class="card"
+            >
+
+                <div class="card-icon">
+                    🇦🇪
+                </div>
+
+                <h3>الدراسات الاجتماعية</h3>
+
+                <p>
+                    اضغط هنا لزيارة مشروع الدراسات الاجتماعية
+                </p>
+
+            </a>
+
         </div>
 
     </section>
 
+
+    <!-- FOOTER -->
     <footer>
-        <p>بالعلم نبني مستقبلاً أفضل 🇦🇪</p>
-        <p>مشروع التعلم الإلكتروني - PBL</p>
+
+        <p>
+            تم التصميم بواسطة عمر محمد وهيثم وليث
+        </p>
+
     </footer>
 
 </body>
+
 </html>
+```

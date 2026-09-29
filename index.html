@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة المواد العربية</title>
+<a href="" class="subject-card">
+    <h2>التربية الإسلامية</h2>
+    <p>مشروع التربية الإسلامية</p>
+</a>
+
+<a href="social.html" class="subject-card">
+    <h2>الدراسات الاجتماعية</h2>
+    <p>مشروع الدراسات الاجتماعية</p>
+</a>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #071426;
+            color: white;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #030d1c;
+            border-bottom: 1px solid #263a52;
+        }
+
+        header h2 {
+            color: #f5c451;
+            font-size: 26px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        nav a:hover {
+            color: #f5c451;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #b7c7dc;
+            font-size: 19px;
+        }
+
+        .subjects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 40px 8%;
+        }
+
+        .card {
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 20px;
+            background: #10243e;
+            border: 1px solid #294362;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #f5c451;
+            box-shadow: 0 10px 30px #0005;
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 25px;
+        }
+
+        .card p {
+            color: #b7c7dc;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .card a {
+            display: block;
+            background: #f5c451;
+            color: #071426;
+            padding: 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .card a:hover {
+            background: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #9aadc4;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 800px) {
+            .subjects {
+                grid-template-columns: 1fr;
+                padding: 30px 7%;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>📚 منصة المواد العربية</h2>
+
+        <nav>
+            <a href="#home">الرئيسية</a>
+            <a href="#subjects">المواد الدراسية</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>مرحباً بك في منصة التعلم</h1>
+        <p>اختر المادة الدراسية التي تريد تعلمها</p>
+    </section>
+
+    <section class="subjects" id="subjects">
+
+        <!-- Arabic -->
+        <div class="card">
+            <div class="icon">📖</div>
+            <h2>اللغة العربية</h2>
+            <p>تعلم القراءة والكتابة والقواعد
+                والنحو بطريقة سهلة وممتعة.</p>
+
+            <a href="arabic.html">
+                ادخل إلى الموقع ←
+            </a>
+        </div>
+
+        <!-- Social Studies -->
+        <div class="card">
+            <div class="icon">🌍</div>
+            <h2>الدراسات الاجتماعية</h2>
+            <p>اكتشف تاريخ الإمارات وجغرافيتها
+                وتراثها الوطني.</p>
+
+            <a href="social.html">
+                ادخل إلى الموقع ←
+            </a>
+        </div>
+
+        <!-- Islamic Studies -->
+        <div class="card">
+            <div class="icon">🕌</div>
+            <h2>التربية الإسلامية</h2>
+            <p>تعلم القرآن الكريم والحديث الشريف
+                والقيم الإسلامية.</p>
+
+            <a href="islamic.html">
+                ادخل إلى الموقع ←
+            </a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>بالعلم نبني مستقبلاً أفضل 🇦🇪</p>
+        <p>مشروع التعلم الإلكتروني - PBL</p>
+    </footer>
+
+</body>
+</html>
